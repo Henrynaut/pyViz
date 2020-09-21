@@ -15,6 +15,6 @@ df['diff'] = wbd['Cumulative Time'] - df['date1']
 wbd['Study Completion Time (s)'] = df['diff'].dt.total_seconds()
 wbd['Study Completion Time (s)'] = wbd['Study Completion Time (s)'].div(60)
 
-sns.displot(data=wbd, x="Study Completion Time (s)", hue="Group", kind="kde", clip=(100,500))
+sns.kdeplot(data=wbd, x="Study Completion Time (s)", hue="Group", kind="kde")
 
 plt.show()
