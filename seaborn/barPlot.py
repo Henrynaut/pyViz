@@ -8,8 +8,8 @@ wbd = pd.read_csv('wbd.csv')
 wbd['Per Task Time'] = pd.to_datetime(wbd['Per Task Time'], errors='coerce')
 
 # Create data frame with same date
-df = pd.DataFrame({'date1':pd.date_range('2020-09-23', periods=189)})
-df['date1'] = pd.to_datetime('2020-09-23')
+df = pd.DataFrame({'date1':pd.date_range('2020-09-24', periods=189)})
+df['date1'] = pd.to_datetime('2020-09-24')
 
 # Convert from calendar date to Task Time (s)
 df['diff'] = wbd['Per Task Time'] - df['date1']
@@ -24,5 +24,5 @@ wbd['Task Time (s)'] = wbd['Task Time (s)'].div(60)
 # print(wbd['Per Task Time'])
 
 
-sns.barplot(x="Task", y="Task Time (s)", data=wbd, ci="sd") 
+sns.barplot(x="Task", y="Task Time (s)", data=wbd, capsize=.1, zorder=5, ci=68) 
 plt.show()
