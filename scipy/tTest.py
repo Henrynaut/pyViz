@@ -1,12 +1,25 @@
-#Derived from https://datasciencechalktalk.com/2019/09/02/hypothesis-tests-with-python/
+# #Derived from https://datasciencechalktalk.com/2019/09/02/hypothesis-tests-with-python/
+import numpy as np, pandas as pd
 
-import numpy as np
+# #Import Whiteboard Group Data as "sample"
+# wbd = pd.read_csv('wbd_ftWB.csv')
+# sample = wbd['Cumulative Time']
+
+# #Import Non-Whiteboard Group Data as "s"
+# nwbd = pd.read_csv('wbd_ftNWB.csv')
+# s = nwbd['Cumulative Time']
+
+# #convert data to seconds, instead of minutes:seconds
+
+# #calculate mean and standard deviations
+# sample_mean = sample.mean()
+# sample_sigma = sample.std()
+# mu = s.mean()
+# sigma = sample.std()
 
 # Create population with mean of 1.5
 sample_mean, sample_sigma = 1.5, 2
 sample = np.random.normal(sample_mean, sample_sigma, 200)
-
-
 
 # Create data sample with a mean of 3
 mu, sigma = 3, 2 
